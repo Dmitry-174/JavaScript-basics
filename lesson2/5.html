@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    /**
+       * Функция складывает 2 числа
+       * @param {number} a первое слагаемое
+       * @param {number} b второе слагаемое
+       * @returns {number} сумма числе a и b
+       */
+    function getSum(a, b) {
+      return a + b;
+    }
+
+
+    /**
+     * Функция вычитает из большего числа меньшее
+     * @param {number} a первое число (уменьшаемое или вычитаемое)
+     * @param {number} b второе число (уменьшаемое или вычитаемое)
+     * @returns {number} разность двух чисел
+     */
+    function getSubtraction(a, b) {
+      if (a > b) {
+        return a - b;
+      } else if (a < b) {
+        return b - a;
+      } else {
+        return 0;
+      }
+    }
+
+
+    /**
+     * Функция умножает 2 числа
+     * @param {number} a первый множитель
+     * @param {number} b второй множитель
+     * @returns {number} результат произведения
+     */
+    function getMultiplication(a, b) {
+      return a * b;
+    }
+
+
+    /**
+     * Функция делит два числа
+     * @param {number} a делимое
+     * @param {number} b делитель
+     * @returns {number} частное
+     */
+    function getQuotient(a, b) {
+      return a / b;
+    }
+
+
+    /**
+     * 
+     * @param {number} arg1 первое число
+     * @param {number} arg2 второе число
+     * @param {string} operation знак операции
+     * @returns результат операции или NaN в случае недопустимого знака операции
+     */
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case '+':
+          return getSum(arg1, arg2);
+        case '-':
+          return getSubtraction(arg1, arg2);
+        case '*':
+          return getMultiplication(arg1, arg2);
+        case '/':
+          return getQuotient(arg1, arg2);
+        default:
+          return NaN;
+      }
+    }
+
+    // проверка
+    console.log(mathOperation(2, 3, '+'));
+    console.log(mathOperation(2, 3, '-'));
+    console.log(mathOperation(2, 3, ':)'));
+  </script>
+</body>
+
+</html>
