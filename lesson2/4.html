@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+    /**
+     * Функция складывает 2 числа
+     * @param {number} a первое слагаемое
+     * @param {number} b второе слагаемое
+     * @returns {number} сумма числе a и b
+     */
+    function getSum(a, b) {
+      return a + b;
+    }
+
+
+    /**
+     * Функция вычитает из большего числа меньшее
+     * @param {number} a первое число (уменьшаемое или вычитаемое)
+     * @param {number} b второе число (уменьшаемое или вычитаемое)
+     * @returns {number} разность двух чисел
+     */
+    function getSubtraction(a, b) {
+      if (a > b) {
+        return a - b;
+      } else if (a < b) {
+        return b - a;
+      } else {
+        return 0;
+      }
+    }
+
+
+    /**
+     * Функция умножает 2 числа
+     * @param {number} a первый множитель
+     * @param {number} b второй множитель
+     * @returns {number} результат произведения
+     */
+    function getMultiplication(a, b) {
+      return a * b;
+    }
+
+
+    /**
+     * Функция делит два числа
+     * @param {number} a делимое
+     * @param {number} b делитель
+     * @returns {number} частное
+     */
+    function getQuotient(a, b) {
+      return a / b;
+    }
+
+
+    // проверка
+    console.log('2 + 3 =', getSum(2, 3));
+
+    console.log('3 - 2 =', getSubtraction(2, 3));
+    console.log('2 - 2 =', getSubtraction(2, 2));
+    console.log('3 - 2 = ', getSubtraction(3, 2));
+
+    console.log('3 * 3 =', getMultiplication(3, 3));
+
+    console.log('12 / 3 =', getQuotient(12, 3));
+    console.log('3 / 10 =', getQuotient(3, 10));
+
+  </script>
+</body>
+
+</html>
