@@ -35,11 +35,11 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
      * @returns {string} слово в верном склонении
      */
     function declinationOfNumber(count, one, two, five) {
-      if (count % 100 === 11) {  // одиннадцать "яблок"
+      if (count % 100 >= 11 && count % 100 < 15) {  // одиннадцать "яблок"
         return five;
       } else if (count % 10 === 1) {
         return one;
-      } else if (count % 10 === 2) {
+      } else if (count % 10 < 5) {
         return two;
       } else {
         return five;
@@ -63,11 +63,28 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
     word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
     console.log(`У меня есть ${applesNumber} ${word}.`);
 
+    applesNumber = 319;
+    word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+    console.log(`У меня есть ${applesNumber} ${word}.`);
+
+    applesNumber = 314;
+    word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+    console.log(`У меня есть ${applesNumber} ${word}.`);
+
     applesNumber = 31;
     word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
     console.log(`У меня есть ${applesNumber} ${word}.`);
 
     applesNumber = 3452;
+    word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+    console.log(`У меня есть ${applesNumber} ${word}.`);
+
+
+    applesNumber = 3454;
+    word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+    console.log(`У меня есть ${applesNumber} ${word}.`);
+
+    applesNumber = 3455;
     word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
     console.log(`У меня есть ${applesNumber} ${word}.`);
 
