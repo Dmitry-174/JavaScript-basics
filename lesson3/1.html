@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо с помощью цикла for вывести следующие 11 строк в консоль:
+0 – это ноль
+1 – нечетное число
+2 – четное число
+3 – нечетное число
+…
+10 – четное число
+-->
+  <script>
+    "use strict";
+
+    // Вариант 1 (универсальный, легко корректировать при изменении условия здачи)
+    /**
+    * Функция возвращет результат проверки является ли число четным
+    * @param {Number} num 
+    * @returns {Boolean} результат проверки, или String 'это ноль' если num - 0
+    */
+    function isEven(num) {
+      if (num === 0) {
+        return "это ноль";
+      } else {
+        return num % 2 === 0;
+      }
+    }
+
+    /**
+     * Функция возвращет текст для вывода в зависимости является ли число четным
+     * @param {boolean} even или String 'это ноль' 
+     * @returns {string} текст
+     */
+    function getTextByEven(even) {
+      if (even === 'это ноль') {
+        return even;
+      } else if (even) {
+        return 'четное число';
+      } else {
+        return 'нечетное число';
+      }
+    }
+
+    const startNum = 0;
+    const endNum = 10;
+    for (let i = startNum; i <= endNum; i++) {
+      const text = getTextByEven(isEven(i));
+      console.log(`${i} - ${text}`);
+    }
+
+    /* Вариант 2 (подходит для данной задачи)
+    первой была такая идея, просто хотелось до конца довести */
+    console.log('0 – это ноль');
+    const textVariants = ['четное число', 'нечетное число']
+    for (let i = 1; i <= 10; i++) {
+      const textVariantIndex = i % 2;
+      const text = textVariants[textVariantIndex];
+      console.log(`${i} - ${text}`);
+    }
+
+  </script>
+</body>
+
+</html>
